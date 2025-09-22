@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zimby Start Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <nav class="top-nav">
+    <div class="nav-left">
+      <span class="logo">Zimby</span>
+      <span class="tagline">Safe. Simple. Trusted.</span>
+    </div>
+    <div class="nav-right">
+      <span id="weather" class="weather">Loading weather...</span>
+      <span class="settings-icon">⚙</span>
+    </div>
+  </nav>
+
+  <main class="dashboard">
+    <section class="card search-card">
+      <form id="search-form" class="search-bar">
+        <input type="text" id="search-input" placeholder="Search..." />
+        <button type="submit" id="search-button">Search</button>
+      </form>
+    </section>
+
+    <section class="card shortcuts-card">
+      <div class="category-tabs">
+        <button class="category-tab active" data-target="favourites">
+          Favourites
+        </button>
+        <button class="category-tab" data-target="shopping">Shopping</button>
+        <button class="category-tab" data-target="news">News &amp; Info</button>
+        <button class="category-tab" data-target="social">Social</button>
+        <button class="category-tab" data-target="tools">Tools</button>
+      </div>
+
+      <div id="favourites" class="link-grid active">
+        <button id="add-link-btn" class="link-button add-link-btn">
+          ➕ Add Link
+        </button>
+        <a class="link-button" href="https://www.amazon.co.uk/">Amazon</a>
+        <a class="link-button" href="https://www.argos.co.uk/">Argos</a>
+        <a class="link-button" href="https://www.currys.co.uk/">Currys</a>
+        <a class="link-button" href="https://www.tesco.com/">Tesco</a>
+      </div>
+
+      <div id="shopping" class="link-grid">
+        <a class="link-button" href="https://www.ebay.co.uk/">eBay</a>
+        <a class="link-button" href="https://www.johnlewis.com/">John Lewis</a>
+        <a class="link-button" href="https://www.ikea.com/gb/en/">IKEA</a>
+      </div>
+
+      <div id="news" class="link-grid">
+        <a class="link-button" href="https://www.bbc.co.uk/">BBC</a>
+        <a class="link-button" href="https://news.sky.com/uk">Sky News</a>
+        <a class="link-button" href="https://www.wikipedia.org/">Wikipedia</a>
+      </div>
+
+      <div id="social" class="link-grid">
+        <a class="link-button" href="https://www.facebook.com/">Facebook</a>
+        <a class="link-button" href="https://twitter.com/">Twitter</a>
+        <a class="link-button" href="https://www.instagram.com/">Instagram</a>
+        <a class="link-button" href="https://www.youtube.com/">YouTube</a>
+      </div>
+
+      <div id="tools" class="link-grid">
+        <a class="link-button" href="https://www.nhs.uk/">NHS</a>
+        <a class="link-button" href="https://www.gov.uk/">GOV.UK</a>
+        <a class="link-button" href="#">Calculator</a>
+        <a class="link-button" href="#">Weather</a>
+      </div>
+    </section>
+
+    <section class="news-section card">
+      <div class="news-filters">
+        <button class="news-filter active" data-category="all">All</button>
+        <button class="news-filter" data-category="local">Local</button>
+        <button class="news-filter" data-category="technology">Tech</button>
+        <button class="news-filter" data-category="business">Business</button>
+      </div>
+      <div id="news-feed" class="news-feed">
+        <p>Loading news...</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="add-link-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Add Favourite</h2>
+      <label for="link-name">Name</label>
+      <input type="text" id="link-name" />
+      <label for="link-url">URL</label>
+      <input type="text" id="link-url" placeholder="https://example.com" />
+      <p id="link-error" class="error-message"></p>
+      <div class="modal-actions">
+        <button id="save-link">Save</button>
+        <button id="cancel-link">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    Some links may earn us a commission. Zimby provides trusted links for safer browsing.
+  </footer>
+</body>
+</html>
